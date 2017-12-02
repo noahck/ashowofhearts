@@ -44,7 +44,7 @@ function showofhearts_front_page() {
 
 		// Featured Episodes Section -- Latest Episode
 		
-		echo '<div class="podcast"><div class="wrap"><div class="one-half first latest">HIHIHI';
+		echo '<div class="podcast"><div class="wrap"><div class="one-half first latest">';
 		$latesteEpisode = new WP_Query( 'post_type=episode&posts_per_page=1' );
  		while($latesteEpisode->have_posts()) : $latesteEpisode->the_post(); ?>
  			 <a style="display: block;" href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'ashowofhearts' ), the_title_attribute() ) ); ?>" rel="bookmark">
