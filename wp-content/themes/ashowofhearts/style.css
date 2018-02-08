@@ -3358,7 +3358,7 @@ li.comment a:hover {
 
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 500px) {
     .home .hero-unit .wrap h1 {
         font-size: 26px;
     }
@@ -3487,6 +3487,13 @@ li.comment a:hover {
 
     .masonry-page .content .entry {
         min-height: 320px;
+    }
+
+    img.alignleft,
+    img.alignright {
+        float: none;
+        margin: 12px auto;
+        display: block;
     }
 }
 
