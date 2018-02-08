@@ -6,10 +6,8 @@ body {
     margin: 0;
     font-family: 'Playfair Display', serif;
     line-height: 2;
-}
-
-body.masonry-page  {
-    background: #ffffff;
+    width: 800px;
+    padding: 5px;
 }
 
 a,
