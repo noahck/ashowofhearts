@@ -460,6 +460,18 @@ h2 {
     font-weight: 700;
 }
 
+.single .entry h2,
+.single .entry h3,
+.single .entry h4,
+.single .entry h5,
+.single .entry h6,
+.page .entry h2,
+.page .entry h3,
+.page .entry h4,
+.page .entry h5,
+.page .entry h6 {
+    display: inline-block;
+}
 
 
 h3 {
