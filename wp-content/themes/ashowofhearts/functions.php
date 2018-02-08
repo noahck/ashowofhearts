@@ -30,3 +30,6 @@ require_once( CHILD_DIR . '/inc/structure/footer.php' );
 require_once( CHILD_DIR . '/inc/settings/customize.php' );
 require_once( CHILD_DIR . '/inc/settings/coloroptions.php' );
 require_once( CHILD_DIR . '/inc/settings/setlogo.php' );
+
+// Editor Styles
+add_editor_style();
