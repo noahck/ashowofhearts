@@ -16,6 +16,15 @@ add_theme_support( 'genesis-accessibility', array( 'headings', 'drop-down-menu',
 // Add viewport meta tag for mobile browsers.
 add_theme_support( 'genesis-responsive-viewport' );
 
+// Add Google Fonts to Editor
+
+// Add Google fonts to editor
+add_action( 'after_setup_theme', 'show_editor_fonts' );
+function show_editor_fonts() {
+	$font_url = str_replace( ',', '%2C', '//fonts.googleapis.com/css?family=Dancing+Script:400,700|Playfair+Display:400,400i,700|Montserrat:400,400i,500,700' );
+	add_editor_style( $font_url );
+}
+
 // Add support for custom background.
 add_theme_support( 'custom-background' );
 
