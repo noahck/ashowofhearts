@@ -88,10 +88,11 @@ function showofhearts_front_page() {
 
 		// Recent Blog Posts Section
 
+		/* This section removed temporarily
 		genesis_widget_area( 'home-latest-articles', array(
 			'before' => '<div class="latest-articles"><div class="wrap">',
 			'after'  => '</div></div>',
-		) );
+		) ); */
 
 	}
 
