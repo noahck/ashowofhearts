@@ -306,3 +306,11 @@ img.alignright,
 .entry-content ul ul {
     margin-bottom: 0;
 }
+
+.single .entry h2,
+.page .entry h2 {
+    font-family: "dancing script", cursive;
+    font-size: 46px;
+    font-size: 4.6rem;
+    font-weight: 700;
+}
