@@ -2310,6 +2310,7 @@ img.alignright,
 
 .entry .contain {
     display: inline-block;
+    margin-bottom: 14px;
 }
 
 .content .entry {
