@@ -45,7 +45,7 @@ function showofhearts_front_page() {
 		// Featured Episodes Section -- Latest Episode
 		
 		echo '<div class="podcast"><div class="wrap"><div class="one-half first latest">';
-		$latesteEpisode = new WP_Query( 'post_type=episode&posts_per_page=1' );
+		$latesteEpisode = new WP_Query( 'post_type=post&posts_per_page=1' );
  		while($latesteEpisode->have_posts()) : $latesteEpisode->the_post(); ?>
  			 <a style="display: block;" href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'ashowofhearts' ), the_title_attribute() ) ); ?>" rel="bookmark">
                     <?php if(has_post_thumbnail()) : the_post_thumbnail( 'home-latest-episode' ); endif;
@@ -60,7 +60,7 @@ function showofhearts_front_page() {
     	// Featured Episodes Section -- Recent Episodes
 
     	echo '</div><div class="one-half recent">';
-    	$recentEpisodes = new WP_Query( 'post_type=episode&posts_per_page=2&offset=1' );
+    	$recentEpisodes = new WP_Query( 'post_type=post&posts_per_page=2&offset=1' );
  		while($recentEpisodes->have_posts()) {
 		 $recentEpisodes->the_post(); ?>
  			<article><a href="<?php the_permalink() ?>" rel="bookmark">

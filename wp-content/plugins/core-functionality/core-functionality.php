@@ -11,4 +11,4 @@
 define( 'BE_DIR', dirname( __FILE__ ) );
 
 require_once( BE_DIR . '/inc/general.php'              ); // General
-require_once( BE_DIR . '/inc/cpt-episode.php'      ); // Testimonial CPT
+require_once( BE_DIR . '/inc/cpt-article.php'      ); // Testimonial CPT

@@ -1,6 +1,6 @@
 <?php
 /**
- * Blog Archive.
+ * Episode Archive.
  *
  *
  * @package      A Show of Hearts
@@ -9,11 +9,11 @@
 
 remove_action ( 'genesis_header', 'show_post_header' );
 remove_action( 'genesis_before_header', 'show_featured_header', 5 );
-add_action( 'genesis_before_header', 'blog_featured_header' ,5 );
+add_action( 'genesis_before_header', 'episodes_featured_header' ,5 );
 /**
  * Featured image background hero unit
  */
-function blog_featured_header() {
+function episodes_featured_header() {
 
 	$args = array(
 	    'post_type' =>'post',
@@ -37,8 +37,8 @@ function blog_featured_header() {
 	wp_reset_postdata();
 }
 	
-add_action( 'show_post_header', 'show_blog_latest' , 15);
-function show_blog_latest() {
+add_action( 'show_post_header', 'show_episode_latest' , 15);
+function show_episode_latest() {
 
 
 	$args = array(
@@ -57,10 +57,10 @@ function show_blog_latest() {
 		$title = get_the_title( ); 
 	?>
 		<div class="entry-header">
-			<p class="entry-meta">- Latest Blog Post - </p> 
+			<p class="entry-meta">- Latest Episode - </p> 
 
 			<h1 class="entry-title" itemprop="headline"><?php echo esc_html($title);?></h1> 
-				<div class="listen"><a class="button" href="<?php the_permalink()?>">Read</a></div>
+				<div class="listen"><a class="button" href="<?php the_permalink()?>">Listen</a></div>
 		</div> 
 	<?php 
 	}

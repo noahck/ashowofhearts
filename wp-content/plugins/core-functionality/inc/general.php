@@ -119,3 +119,33 @@ function ea_gravityforms_domain( $notification, $form, $entry ) {
 	return $notification;
 }
 add_filter( 'gform_notification', 'ea_gravityforms_domain', 10, 3 );
+
+//Update Post Lables
+function show_change_post_label() {
+    global $menu;
+    global $submenu;
+    $menu[5][0] = 'Episodes';
+    $submenu['edit.php'][5][0] = 'Episodes';
+    $submenu['edit.php'][10][0] = 'Add Episode';
+    $submenu['edit.php'][16][0] = 'Episode Tags';
+}
+function show_change_post_object() {
+    global $wp_post_types;
+    $labels = &$wp_post_types['post']->labels;
+    $labels->name = 'Episodes';
+    $labels->singular_name = 'Episode';
+    $labels->add_new = 'Add Episode';
+    $labels->add_new_item = 'Add Episode';
+    $labels->edit_item = 'Edit Episode';
+    $labels->new_item = 'Episode';
+    $labels->view_item = 'View Episode';
+    $labels->search_items = 'Search Episode';
+    $labels->not_found = 'No Episodes found';
+    $labels->not_found_in_trash = 'No Episodes found in Trash';
+    $labels->all_items = 'All Episodes';
+    $labels->menu_name = 'Episodes';
+    $labels->name_admin_bar = 'Episodes';
+}
+ 
+add_action( 'admin_menu', 'show_change_post_label' );
+add_action( 'init', 'show_change_post_object' );

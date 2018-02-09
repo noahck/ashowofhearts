@@ -368,7 +368,7 @@ function show_shortcode_btn_dark( $link, $content = null ) {
  */
 function show_query_offset(&$query) {
 
-    if ( ( $query->is_post_type_archive('episode') || $query->is_home() ) && $query->is_main_query() && ! is_admin() ) {
+    if ( ( $query->is_post_type_archive('article') || $query->is_home() ) && $query->is_main_query() && ! is_admin() ) {
 
         // First, define your desired offset...
         $offset = 1;
@@ -414,7 +414,7 @@ function show_adjust_offset_pagination($found_posts, $query) {
     $offset = 1;
 
     // Ensure we're modifying the right query object...
-    if ( ( $query->is_post_type_archive('episode') || $query->is_home() )  && $query->is_main_query() && !is_admin() ) {
+    if ( ( $query->is_post_type_archive('article') || $query->is_home() )  && $query->is_main_query() && !is_admin() ) {
         // Reduce WordPress's found_posts count by the offset... 
         return $found_posts - $offset;
     }
@@ -449,7 +449,7 @@ function show_section_menu() {
 }
 
 /*
- * Include Episodes in Category Archives
+ * Include Articles in Category Archives
  */
 
 add_filter( 'pre_get_posts', 'show_add_custom_types' );
@@ -457,7 +457,7 @@ add_filter( 'pre_get_posts', 'show_add_custom_types' );
 function show_add_custom_types( $query ) {
   if( is_category() || is_tag() && empty( $query->query_vars['suppress_filters'] ) ) {
     $query->set( 'post_type', array(
-     'post', 'nav_menu_item', 'episode'
+     'post', 'nav_menu_item', 'article'
 		));
 	  return $query;
 	}
@@ -518,7 +518,7 @@ function show_post_subtitle() {
 if (!is_admin()) {
 	function show_search_filter($query) {
 	if ($query->is_search) {
-		$query->set('post_type', array( 'post', 'episode' ));
+		$query->set('post_type', array( 'post', 'article' ));
 		}
 	return $query;
 	}

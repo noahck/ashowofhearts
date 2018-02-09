@@ -7,14 +7,14 @@
  */
 
 /**
- * Podcast Episodes
+ * Podcast articles
  *
- * This file registers the episode custom post type
+ * This file registers the article custom post type
  * and setups the various functions and items it uses.
  *
  * @since 2.0.0
  */
-class show_Episodes {
+class show_articles {
 
 	/**
 	 * Initialize all the things
@@ -26,15 +26,15 @@ class show_Episodes {
 		// Actions
 		add_action( 'init',              array( $this, 'register_cpt'      )    );
 		add_action( 'gettext',           array( $this, 'title_placeholder' )    );
-		add_action( 'pre_get_posts',     array( $this, 'Episode_query' )    );
+		add_action( 'pre_get_posts',     array( $this, 'article_query' )    );
 		add_action( 'template_redirect', array( $this, 'redirect_single'   )    );
 
 		// Column Filters
-		add_filter( 'manage_edit-episode_columns',        array( $this, 'episode_columns' )        );
+		add_filter( 'manage_edit-article_columns',        array( $this, 'article_columns' )        );
 
 		// Column Actions
-		add_action( 'manage_episode_pages_custom_column', array( $this, 'custom_columns'      ), 10, 2 );
-		add_action( 'manage_episode_posts_custom_column', array( $this, 'custom_columns'      ), 10, 2 );
+		add_action( 'manage_article_pages_custom_column', array( $this, 'custom_columns'      ), 10, 2 );
+		add_action( 'manage_article_posts_custom_column', array( $this, 'custom_columns'      ), 10, 2 );
 	}
 
 
@@ -46,18 +46,18 @@ class show_Episodes {
 	function register_cpt() {
 
 		$labels = array( 
-			'name'               => 'Episodes',
-			'singular_name'      => 'Episode',
+			'name'               => 'Articles',
+			'singular_name'      => 'Article',
 			'add_new'            => 'Add New',
-			'add_new_item'       => 'Add New Episode',
-			'edit_item'          => 'Edit Episode',
-			'new_item'           => 'New Episode',
-			'view_item'          => 'View Episode',
-			'search_items'       => 'Search Episodes',
-			'not_found'          => 'No Episodes found',
-			'not_found_in_trash' => 'No Episodes found in Trash',
-			'parent_item_colon'  => 'Parent Episode:',
-			'menu_name'          => 'Episodes',
+			'add_new_item'       => 'Add New article',
+			'edit_item'          => 'Edit article',
+			'new_item'           => 'New article',
+			'view_item'          => 'View article',
+			'search_items'       => 'Search articles',
+			'not_found'          => 'No articles found',
+			'not_found_in_trash' => 'No articles found in Trash',
+			'parent_item_colon'  => 'Parent article:',
+			'menu_name'          => 'Articles',
 		);
 
 		$args = array( 
@@ -72,15 +72,14 @@ class show_Episodes {
 			'exclude_from_search' => false,
 			'query_var'           => true,
 			'can_export'          => true,
-			'rewrite'             => array( 'slug' => 'episodes', 'with_front' => true ),
+			'rewrite'             => array( 'slug' => 'articles', 'with_front' => true ),
 			'menu_icon'           => 'dashicons-microphone',
 			'taxonomies'          => array( 'category', ),
-			'menu_position'       => 2,
+			'menu_position'       => 5,
 			'has_archive'		  => true,
-			'capability_type' => 'post'
 		);
 
-		register_post_type( 'Episode', $args );
+		register_post_type( 'article', $args );
 
 	}
 
@@ -95,7 +94,7 @@ class show_Episodes {
 	function title_placeholder( $translation ) {
 
 		global $post;
-		if ( isset( $post ) && 'Episode' == $post->post_type && 'Enter title here' == $translation ) {
+		if ( isset( $post ) && 'article' == $post->post_type && 'Enter title here' == $translation ) {
 			$translation = 'Enter Name Here';
 		}
 		return $translation;
@@ -103,36 +102,36 @@ class show_Episodes {
 	}
 	
 	/**
-	 * Customize the Episodes Query
+	 * Customize the articles Query
 	 *
 	 * @since 2.0.0
 	 * @param object $query
 	 */
-	function Episode_query( $query ) {
-		if( $query->is_main_query() && !is_admin() && $query->is_post_type_archive( 'Episode' ) ) {
+	function article_query( $query ) {
+		if( $query->is_main_query() && !is_admin() && $query->is_post_type_archive( 'article' ) ) {
 			$query->set( 'posts_per_page', 20 );
 		}
 	}
 	
 	/**
-	 * Redirect Single Episodes
+	 * Redirect Single articles
 	 *
 	 * @since 2.0.0
 	 */
 	function redirect_single() {
-		if( is_singular( 'Episode' ) ) {
-			wp_redirect( get_post_type_archive_link( 'Episode' ) );
+		if( is_singular( 'article' ) ) {
+			wp_redirect( get_post_type_archive_link( 'article' ) );
 			exit;
 		}
 	}
 
 	/**
-	 * Episodes custom columns
+	 * articles custom columns
 	 *
 	 * @since 2.0.0
 	 * @param array $columns
 	 */
-	function Episode_columns( $columns ) {
+	function article_columns( $columns ) {
 
 		$columns = array(
 			'cb'                  => '<input type="checkbox" />',
@@ -164,5 +163,5 @@ class show_Episodes {
 	}
 	
 }
-new show_Episodes();
+new show_articles();
 

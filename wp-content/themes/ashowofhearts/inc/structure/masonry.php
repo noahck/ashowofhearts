@@ -80,11 +80,11 @@ function show_masonry_layout() {
 
 function show_content_post_type() {
 
-	if ( 'episode' == get_post_type() ) {
+	if ( 'post' == get_post_type() ) {
 		$postType = 'Episode';
 	}
 	
-	else if ( 'post' == get_post_type() ) {
+	else if ( 'article' == get_post_type() ) {
 		$postType = 'Article';
 	}
 

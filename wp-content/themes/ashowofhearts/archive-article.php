@@ -14,19 +14,19 @@
 
 remove_action ( 'genesis_header', 'show_post_header' );
 remove_action( 'genesis_before_header', 'show_featured_header', 5 );
-add_action( 'genesis_before_header', 'episodes_featured_header' );
+add_action( 'genesis_before_header', 'articles_featured_header' );
 
 
 // Grabs the image
-function episodes_featured_header() {
+function articles_featured_header() {
 
 	$args = array(
-	    'post_type' =>'episode',
+	    'post_type' =>'article',
 	    'posts_per_page' => 1,
 	    'orderby'=>'post_date',
 	    'order' => 'DESC',
 	     );
-
+	// The Query
 	$query1 = new WP_Query( $args );
 
 	if ( $query1->have_posts() ) {
@@ -41,12 +41,12 @@ function episodes_featured_header() {
 }
 	
 // Title and Link
-add_action( 'show_post_header', 'show_episode_latest' , 15);
-function show_episode_latest() {
+add_action( 'show_post_header', 'show_blog_latest' , 15);
+function show_blog_latest() {
 
 
 	$args = array(
-	    'post_type' =>'episode',
+	    'post_type' =>'article',
 	    'posts_per_page' => 1,
 	    'orderby'=>'post_date',
 	    'order' => 'DESC',
@@ -62,10 +62,10 @@ function show_episode_latest() {
 		$title = get_the_title( ); 
 	?>
 		<div class="entry-header">
-			<p class="entry-meta">- Latest Episdoe - </p> 
+			<p class="entry-meta">- Latest Post - </p> 
 
 			<h1 class="entry-title" itemprop="headline"><?php echo esc_html($title);?></h1> 
-				<div class="listen"><a class="button" href="<?php the_permalink()?>">Listen</a></div>
+				<div class="listen"><a class="button" href="<?php the_permalink()?>">Read</a></div>
 		</div> 
 	<?php 
 	}
