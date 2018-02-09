@@ -166,3 +166,13 @@ class show_Episodes {
 	
 }
 new show_Episodes();
+
+// Add to RSS feed
+
+function shfeed_request($qv) {
+    
+    if (isset($qv['feed']))
+        $qv['episodes'] = get_post_types();
+    return $qv;
+}
+add_filter('request', 'shfeed_request');
