@@ -172,7 +172,7 @@ new show_Episodes();
 function shfeed_request($qv) {
     
     if (isset($qv['feed']))
-        $qv['episodes'] = get_post_types();
+        $qv['episode'] = get_post_types();
     return $qv;
 }
 add_filter('request', 'shfeed_request');
