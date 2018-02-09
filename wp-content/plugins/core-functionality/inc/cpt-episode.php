@@ -77,8 +77,6 @@ class show_Episodes {
 			'taxonomies'          => array( 'category', ),
 			'menu_position'       => 2,
 			'has_archive'		  => true,
-			'capability_type' => 'post'
-
 		);
 
 		register_post_type( 'Episode', $args );
@@ -172,7 +170,7 @@ new show_Episodes();
 function shfeed_request($qv) {
     
     if (isset($qv['feed']))
-        $qv['episode'] = get_post_types();
+        $qv['episode'] = get_post_type();
     return $qv;
 }
 add_filter('request', 'shfeed_request');
