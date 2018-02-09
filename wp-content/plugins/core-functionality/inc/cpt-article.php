@@ -73,7 +73,7 @@ class show_articles {
 			'query_var'           => true,
 			'can_export'          => true,
 			'rewrite'             => array( 'slug' => 'articles', 'with_front' => true ),
-			'menu_icon'           => 'dashicons-microphone',
+			'menu_icon'           => 'dashicons-welcome-write-blog',
 			'taxonomies'          => array( 'category', ),
 			'menu_position'       => 5,
 			'has_archive'		  => true,
@@ -119,10 +119,7 @@ class show_articles {
 	 * @since 2.0.0
 	 */
 	function redirect_single() {
-		if( is_singular( 'article' ) ) {
-			wp_redirect( get_post_type_archive_link( 'article' ) );
-			exit;
-		}
+		
 	}
 
 	/**
