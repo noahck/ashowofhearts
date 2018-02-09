@@ -167,10 +167,9 @@ new show_Episodes();
 
 // Add to RSS feed
 
-function shfeed_request($qv) {
-    
+function myfeed_request($qv) {
     if (isset($qv['feed']))
-        $qv['episode'] = get_post_type();
+        $qv['post_type'] = get_post_types();
     return $qv;
 }
-add_filter('request', 'shfeed_request');
+add_filter('request', 'myfeed_request');
