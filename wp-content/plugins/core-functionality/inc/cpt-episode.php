@@ -70,7 +70,6 @@ class show_Episodes {
 			'show_in_nav_menus'   => true,
 			'publicly_queryable'  => true,
 			'exclude_from_search' => false,
-			'has_archive'         => true,
 			'query_var'           => true,
 			'can_export'          => true,
 			'rewrite'             => array( 'slug' => 'episodes', 'with_front' => true ),
@@ -78,6 +77,7 @@ class show_Episodes {
 			'taxonomies'          => array( 'category', ),
 			'menu_position'       => 2,
 			'has_archive'		  => true,
+			'capability_type' => 'post'
 
 		);
 
