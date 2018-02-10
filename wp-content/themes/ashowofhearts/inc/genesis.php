@@ -481,7 +481,8 @@ function show_category_filter() {
 						Topics: <?php foreach ( $terms as $term ) : $term_link = get_term_link( $term );?> <a href='<?php echo esc_url( $term_link )?>'><?php echo esc_html( $term->name ); ?></a><?php endforeach; ?>
 					 <?php
 					if ( is_category() || is_search() ) { ?>
-					<span class="all-topics">View all: <a href="/episodes">Episodes</a> <a href="/blog">Articles</a></span> <?php } ?>
+					<span class="all-topics">View all: <a href="/episodes">Episodes</a> 
+					<?php /*<a href="/blog">Articles</a>*/ ?> </span> <?php } ?>
 					</div>
 					<div class="one-fourth">
 						<form id="searchform" itemprop="potentialAction" itemscope="" itemtype="https://schema.org/SearchAction" method="get" action="<?php echo home_url('/'); ?>">
