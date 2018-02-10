@@ -224,7 +224,7 @@ add_action( 'show_post_header', 'show_entry_gravatar', 30 );
  */
 function show_entry_gravatar() {
 
-	if ( is_singular( 'post' ) ) {
+	if ( is_singular( 'article' ) ) {
 		
 		echo '<div class="entry-avatar">';
 		global $post;
