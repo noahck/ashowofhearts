@@ -13,6 +13,12 @@
 
 // Remove default loop.
 remove_action( 'genesis_loop', 'genesis_do_loop' );
+remove_action( 'show_post_header', 'genesis_do_post_title', 10 );
+remove_action( 'show_post_header', 'genesis_post_info', 5 );
+remove_action( 'show_post_header', 'genesis_entry_header_markup_open', 5 );
+remove_action( 'show_post_header', 'genesis_entry_header_markup_close', 15 );
+remove_action( 'show_post_header', 'genesis_post_meta', 12 );
+
 
 add_action( 'genesis_loop', 'genesis_404' );
 /**
@@ -27,12 +33,12 @@ function genesis_404() {
 		'context' => 'entry-404',
 	) );
 
-		printf( '<h1 class="entry-title">%s</h1>', apply_filters( 'genesis_404_entry_title', __( 'Not found, error 404', 'genesis' ) ) );
+		printf( '<h1 class="entry-title">%s</h1>', apply_filters( 'genesis_404_entry_title', __( 'On no!  We can\'t locate that page...', 'genesis' ) ) );
 		echo '<div class="entry-content">';
 
 			if ( genesis_html5() ) :
 
-				echo apply_filters( 'genesis_404_entry_content', '<p>' . sprintf( __( 'The page you are looking for no longer exists. Perhaps you can return back to the site\'s <a href="%s">homepage</a> and see if you can find what you are looking for. Or, you can try finding it by using the search form below.', 'genesis' ), trailingslashit( home_url() ) ) . '</p>' );
+				echo apply_filters( 'genesis_404_entry_content', '<p>' . sprintf( __( 'So sorry, but the page you are looking for no longer exists. You may have entered the url incorrectly, or we may have made a mistake. Perhaps you can return back to the site\'s <a href="%s">homepage</a> and see if you can find what you are looking for. Or, you can try finding it by using the search form below.', 'genesis' ), trailingslashit( home_url() ) ) . '</p>' );
 
 				get_search_form();
 
