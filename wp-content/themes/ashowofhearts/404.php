@@ -33,7 +33,7 @@ function genesis_404() {
 		'context' => 'entry-404',
 	) );
 
-		printf( '<h1 class="entry-title">%s</h1>', apply_filters( 'genesis_404_entry_title', __( 'On no!  We can\'t locate that page...', 'genesis' ) ) );
+		printf( '<h1 class="entry-title">%s</h1>', apply_filters( 'genesis_404_entry_title', __( 'Oh no!  We can\'t locate that page...', 'genesis' ) ) );
 		echo '<div class="entry-content">';
 
 			if ( genesis_html5() ) :
