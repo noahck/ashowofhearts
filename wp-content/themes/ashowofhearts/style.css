@@ -3306,6 +3306,12 @@ li.comment a:hover {
         margin: 0 auto;
     }
 
+    .home .bio img {
+        display: block;
+        margin: 0 auto;
+        top: 0;
+    }
+
      .footer-widget-area .simple-social-icons {
         float: none;
     }
@@ -3359,6 +3365,8 @@ li.comment a:hover {
         font-size: 20px;
         font-size: 2rem;
     }
+
+
 
 
 }
@@ -3501,11 +3509,6 @@ li.comment a:hover {
         display: block;
     }
 
-    .home .bio img {
-        display: block;
-        margin: 0 auto;
-        top: 0;
-    }
 }
 
 .sub-menu-toggle,
