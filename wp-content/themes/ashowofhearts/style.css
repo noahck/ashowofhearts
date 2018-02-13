@@ -3494,8 +3494,8 @@ li.comment a:hover {
         min-height: 320px;
     }
 
-    img.alignleft,
-    img.alignright {
+    .entry-content img.alignleft,
+    .entry-content img.alignright {
         float: none;
         margin: 12px auto;
         display: block;
