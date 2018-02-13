@@ -3495,11 +3495,15 @@ li.comment a:hover {
     }
 
     .entry-content img.alignleft,
-    .entry-content img.alignright,
-    .home .bio img.alignright {
+    .entry-content img.alignright {
         float: none;
         margin: 12px auto;
         display: block;
+    }
+
+    .home .bio img {
+        display: block;
+        margin: 0 auto;
     }
 }
 
