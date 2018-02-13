@@ -3495,7 +3495,8 @@ li.comment a:hover {
     }
 
     .entry-content img.alignleft,
-    .entry-content img.alignright {
+    .entry-content img.alignright,
+    .home .bio img.alignright {
         float: none;
         margin: 12px auto;
         display: block;
