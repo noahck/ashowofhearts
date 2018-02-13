@@ -311,7 +311,7 @@ add_action( 'genesis_before_footer', 'show_widget_above_footer', 5 );
 function show_widget_above_footer() {
 
 	genesis_widget_area( 'above_footer', array(
-		'before' => '<div class="pre-footer"><div class="wrap">',
+		'before' => '<div id="newsletter" class="pre-footer"><div class="wrap">',
 		'after'  => '</div></div>',
 	) );
 
