@@ -3504,6 +3504,7 @@ li.comment a:hover {
     .home .bio img {
         display: block;
         margin: 0 auto;
+        top: 0;
     }
 }
 
