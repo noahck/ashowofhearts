@@ -559,3 +559,7 @@ function filter_ptags_on_images($content){
 }
 
 add_filter('the_content', 'filter_ptags_on_images');
+
+// Remove WP inline gallery styles
+
+add_filter( 'use_default_gallery_style', '__return_false' );
